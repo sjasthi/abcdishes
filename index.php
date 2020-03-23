@@ -28,3 +28,46 @@ table.center {
 </body>
 
 </html>
+
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<h2>Home</h2>
+<p>This will be the home page for the ABC dishes</p>
+
+<div class="row">
+  <div class="column">
+    <img src="images/dish2.png" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/dish1.png" alt="Forest" style="width:100%">
+    
+  </div>
+  <div class="column">
+    <img src="images/dish3.png" style="width:100%">
+  </div>
+  
+</div>
+
+</body>
+</html>

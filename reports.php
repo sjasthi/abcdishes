@@ -1,18 +1,17 @@
 <?php
+	
+  // set the current page; 
   $nav_selected = "REPORTS";
-  $left_buttons = "NO";
+
+  // make the left menu buttons visible; options: YES, NO
+  $left_buttons = "YES";
+
+  // set the left menu button selected; options will change based on the main selection
   $left_selected = "";
 
   include("./nav.php");
-  
- ?>
+?>
 
- <div class="right-content">
-    <div class="container">
-
-      <h3 style = "color: #01B0F1;">Reports (TO BE DONE LATER)</h3>
-
-    </div>
-</div>
 
 <?php include("./footer.php"); ?>
+

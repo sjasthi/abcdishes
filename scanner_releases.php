@@ -3,7 +3,7 @@
   $left_buttons = "YES";
   $left_selected = "RELEASES";
 
-  include("./nav.php");
+  //include("./nav.php");
   
  ?>
 

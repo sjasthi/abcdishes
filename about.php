@@ -38,16 +38,22 @@
 
 <body class="body_background">
 
-<h3 style = "color: #01B0F1;">Problem Solution</h3>
 
 
 <h3 style = "color: #01B0F1;">About</h3>
 
-	<h3>Team</h3>
+	<h3>Team Members</h3>
 	<p>
 		<ul>
-      <li>Siva Jasthi (siva.jasthi@metrostate.edu) </li>
-      <li>First Last (first.last@metrostate.edu) </li>
+      <li>Siva Jasthi </li>
+      <li>Ahmed Farah </li>
+      <li>Danny Mulenda </li>
+      <li>Dylon Lowinske </li>
+      <li>Mada Midtling </li>
+      <li>UT Dinh </li>
+
+
+
       
 		</ul>
   </p>
