@@ -16,6 +16,8 @@
 ?>
 <div class="container">
 <style>#title {text-align: center; color: darkgoldenrod;}</style>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+
 <?php
 include_once 'db_configuration.php';
 

@@ -24,6 +24,8 @@
     $mysqli = NEW MySQLi('localhost','root','','abcd_db');
     //$resultset = $mysqli->query("SELECT DISTINCT topic FROM topics ORDER BY topic ASC");   
 ?>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+
 <link href="css/form.css" rel="stylesheet">
 <style>#title {text-align: center; color: darkgoldenrod;}</style>
 <div class="container">

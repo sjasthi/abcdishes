@@ -30,6 +30,8 @@ $puzzles = $puzzle[0]['value'];
 ?>
 <style>#title {text-align: center;color: darkgoldenrod;}</style>
 <html>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+
     <head>
         <title>QuizMaster Quiz</title>
         <style>

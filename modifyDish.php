@@ -2,6 +2,7 @@
 <?php $page_title = 'Modify Dish'; ?>
 <?php $page_title = 'ABCDishes > Modify Dish'; ?>
 <?php
+
  // set the current page to one of the main buttons
   $nav_selected = "HOME";
 
@@ -21,6 +22,7 @@
 ?>
 <div class="container">
 <style>#title {text-align: center; color: darkgoldenrod;}</style>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 
 <?php
 include_once 'db_configuration.php';

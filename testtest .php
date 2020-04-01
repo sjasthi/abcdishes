@@ -1,21 +1,12 @@
-<?php
-  $nav_selected = "SCANNER";
-  $left_buttons = "YES";
-  $left_selected = "Pie Charts";
-
-  include("./nav.php");
-  ?>
-
  <?php  
- $connect = mysqli_connect("localhost", "root", "", "abcd_db");  
- $query = "SELECT Status, count(*) as number FROM dishes GROUP BY Status";  
+ $connect = mysqli_connect("localhost", "root", "", "testing");  
+ $query = "SELECT Status, count(*) as approved  FROM dishes GROUP BY ASC";  
  $result = mysqli_query($connect, $query);  
  ?>  
  <!DOCTYPE html>  
  <html>  
- <link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
       <head>  
-           <title>Summary of the Status</title>  
+           <title>Webslesson Tutorial | Make Simple Pie Chart by Google Chart API with PHP Mysql</title>  
            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
            <script type="text/javascript">  
            google.charts.load('current', {'packages':['corechart']});  
@@ -23,18 +14,18 @@
            function drawChart()  
            {  
                 var data = google.visualization.arrayToDataTable([  
-                          ['Status', 'Number'],  
+                          ['Status', 'approved '],  
                           <?php  
                           while($row = mysqli_fetch_array($result))  
                           {  
-                               echo "['".$row["Status"]."', ".$row["number"]."],";  
+                               echo "['".$row["gender"]."', ".$row["approved "]."],";  
                           }  
                           ?>  
                      ]);  
                 var options = {  
                       title: 'Percentage of approved  ',  
                       //is3D:true,  
-                      //pieHole: 0.4  
+                      pieHole: 0.4  
                      };  
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
                 chart.draw(data, options);  
@@ -44,11 +35,9 @@
       <body>  
            <br /><br />  
            <div style="width:900px;">  
-                <h3 align="center">Summary of the Status</h3>  
+                <h3 align="center">Summary</h3>  
                 <br />  
                 <div id="piechart" style="width: 900px; height: 500px;"></div>  
            </div>  
       </body>  
  </html>  
-
- <?php include("./footer.php"); ?>

@@ -33,6 +33,8 @@
 
     mysqli_query($db, $sql);
     header('location: list.php?createDish=Success');
+	<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+
 
 
     // if($validate){

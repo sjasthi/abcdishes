@@ -19,6 +19,7 @@
 
   ?>
 <header>Status</header>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 
   
     
