@@ -1,3 +1,24 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    function updateValue(element,column,id){
+        var value = element.innerText
+        $.ajax({
+            url:'editableList.php',
+            type: 'post',
+            data:{
+                value: value,
+                column: column,
+                id: id
+            },
+            success:function(php_result){
+                console.log(php_result);
+            }
+            
+        })
+    }
+</script> 
+
 <?php
   $nav_selected = "LIST";
   $left_buttons = "NO";
@@ -31,6 +52,8 @@ $GLOBALS['data'] = mysqli_query($db, $query);
     $page="list.php";
     //verifyLogin($page);
 ?>
+
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 
 <style>
     #title {
@@ -100,35 +123,42 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                 </tr>
                 </thead>
                 <tbody>
+
                 <?php
-                // fetch the data from $_GLOBALS
-                if ($data->num_rows > 0) {
-                    // output data of each row
-                    while($row = $data->fetch_assoc()) {
-                        echo '<tr>
-                                <td>'.$row["ID"].'</td>
-                                <td>'.$row["Name"].' </span> </td>
-                                <td>'.$row["Type"].'</td>
-                                <td>'.$row["State"].'</td>
-                                <td>'.$row["Country"].' </span> </td>
-                                <td>'.$row["Description"].' </span> </td>
-                                <td>'.$row["Recipe_links"].' </span> </td>
-                                <td>'.$row["Video_links"].' </span> </td>
-                                <td>'.$row["Status"].' </span> </td>
-                                <td>'.$row["Notes"].' </span> </td>
-                                <td><img src="images/' .$row["Image"]. '">
-
-
-                                                                                                                     
-                                <td><a class="btn btn-warning btn-sm" href="modifyDish.php?id='.$row["ID"].'">Modify</a></td>
-                                <td><a class="btn btn-danger btn-sm" href="deleteDish.php?id='.$row["ID"].'">Delete</a></td>
-                            </tr>';
-                    }//end while
-                }//end if
-                else {
-                    echo "0 results";
-                }//end else
+                while($row = $data->fetch_assoc()) {
+                    $ID = $row["ID"];
+                    $Name = $row["Name"];
+                    $Type = $row["Type"];
+                    $State = $row["State"];
+                    $Country = $row["Country"];
+                    $Description = $row["Description"];
+                    $Recipe_links = $row["Recipe_links"];
+                    $Video_links = $row["Video_links"];
+                    $Status = $row["Status"];
+                    $Notes = $row["Notes"];
+                    $Image = $row["Image"];
                 ?>
+
+                <tr>
+                    <td><?php echo $ID; ?></td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Name','<?php echo $ID; ?>')"><?php echo $Name; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Type','<?php echo $ID; ?>')"><?php echo $Type; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'State','<?php echo $ID; ?>')"><?php echo $State; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Country','<?php echo $ID; ?>')"><?php echo $Country; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Description','<?php echo $ID; ?>')"><?php echo $Description; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Recipe_links','<?php echo $ID; ?>')"><?php echo $Recipe_links; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Video_links','<?php echo $ID; ?>')"><?php echo $Video_links; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Status','<?php echo $ID; ?>')"><?php echo $Status; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Name','<?php echo $ID; ?>')"><?php echo $Name; ?></div></span> </td>
+                    <?php echo '<td><img src="images/'.$row["Image"].'">' ?>
+                    <?php echo '<td><a class="btn btn-warning btn-sm" href="modifyDish.php?id='.$row["ID"].'">Modify</a></td>' ?>
+                    <?php echo '<td><a class="btn btn-danger btn-sm" href="deleteDish.php?id='.$row["ID"].'">Delete</a></td>' ?>
+                </tr>
+
+                <?php     
+                }//end while
+                ?>
+
                 </tbody>
             </div>
         </table>

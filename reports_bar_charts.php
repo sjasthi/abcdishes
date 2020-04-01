@@ -10,6 +10,7 @@
 ?>
 <!DOCTYPE HTML>
 <html>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 <head>
  <meta charset="utf-8">
  <title>

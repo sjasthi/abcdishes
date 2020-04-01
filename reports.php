@@ -14,4 +14,5 @@
 
 
 <?php include("./footer.php"); ?>
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 

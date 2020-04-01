@@ -10,10 +10,11 @@
   $left_selected = "";
 
   include("./nav.php");
+
 ?>
 
 <html>
-
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 <head>
 <style>
 table.center {
