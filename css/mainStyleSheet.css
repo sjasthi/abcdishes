@@ -464,3 +464,30 @@ a {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
+
+@media print {
+  html, body {
+    border: 1px solid white;
+    height: 99%;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+ }
+ .print-display-none,
+ .print-display-none * {
+   display: none !important;
+ }
+ .print-visibility-hide,
+ .print-visibility-hide * {
+   visibility: hidden !important;
+ }
+ .printme,
+ .printme * {
+   visibility: visible !important;
+ }
+ .printme {
+   position: absolute;
+   left: 0;
+   top: 0;
+ }
+ 
+}

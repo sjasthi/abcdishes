@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2020 at 01:33 AM
+-- Generation Time: Apr 08, 2020 at 03:47 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -47,9 +47,10 @@ CREATE TABLE `dishes` (
 --
 
 INSERT INTO `dishes` (`ID`, `Name`, `Type`, `State`, `Country`, `Description`, `Recipe_links`, `Video_links`, `Status`, `Notes`, `Image`) VALUES
-(1, 'CHICKEN MAKHANI (BUTTER CHICKEN)', 'VEGETARIAN INDIAN', 'indian', 'india', 'Butter chicken is mouth-watering, tender chicken, cooked in a spiced tomato sauce. It’s traditionall', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Always make the gravy by first cooking fresh tomato, garlic, and cardamom down into a bright red pul', 'dish1.jfif'),
-(2, 'AMOSAS (DEEP-FRIED POTATO/VEGGIE DUMPLING)', 'Vegan', 'Michigan', 'United States', 'Spiced potatoes, onions, peas, and lentils fill traditional samosas. But sometimes, they are made wi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Good news for all of you Michigan food lovers and solely plant-based eaters. Indian samosas are usua', 'dish2.jfif'),
-(3, 'ALOO GOBI (POTATO AND CAULIFLOWER)', 'Vegan ', 'Bangalore', 'India', 'Aloo Gobi is a dry, vegan Indian dish, made with potatoes (aloo), cauliflower (gobi), and Indian spi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'None', 'In review ', 'Aloo Gobi occasionally contains kalonji and curry leaves as well. Other common ingredients include g', 'dish3.jfif');
+(1, 'CHICKEN MAKHANI (BUTTER CHICKEN)', 'test', 'indian', 'indian', 'Butter chicken is mouth-watering, tender chicken, cooked in a spiced tomato sauce.', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Always make the gravy by first cooking fresh tomato, garlic, and cardamom down into a bright red pul', 'dish1.jfif'),
+(2, 'AMOSAS (DEEP-FRIED POTATO/VEGGIE DUMPLING)', 'test', 'Michigan', 'United States', 'Spiced potatoes, onions, peas, and lentils fill traditional samosas. But sometimes, they are made wi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Good news for all of you Michigan food lovers and solely plant-based eaters. Indian samosas are usua', 'dish2.jfif'),
+(3, 'ALOO GOBI (POTATO AND CAULIFLOWER)', 'test', 'Bangalore', 'India', 'Aloo Gobi is a dry, vegan Indian dish, made with potatoes (aloo), cauliflower (gobi), and Indian spi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'None', 'In review ', 'Aloo Gobi occasionally contains kalonji and curry leaves as well. Other common ingredients include g', 'dish3.jfif'),
+(15, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '');
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `dishes`
 --
 ALTER TABLE `dishes`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
