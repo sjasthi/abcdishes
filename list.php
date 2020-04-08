@@ -12,13 +12,28 @@
                 id: id
             },
             success:function(php_result){
-                console.log(php_result);
+				console.log(php_result);
+				<!-- Add show/hide column -->
+				$('.showHideColumn').on('click', function () {
+				var tableColumn = ceremoniesTable.column($(this).attr('data-columnindex'));
+					tableColumn.visible(!tableColumn.visible());
+				});
+			<!-- Add show/hide column -->
             }
             
         })
     }
 </script> 
 
+<!-- Add show/hide column -->
+<style> 
+	.ShowHideColumn {
+			cursor: pointer;
+			color:blue;
+	}
+
+</style> 
+<!-- Add show/hide column -->
 <?php
   $nav_selected = "LIST";
   $left_buttons = "NO";
@@ -99,11 +114,12 @@ $GLOBALS['data'] = mysqli_query($db, $query);
     ?>
    
    
-    <h2 id="title">Dishes List</h2><br>
-    
+    <h2 id="title">Dishes List</h2><br>    
     <div id="customerTableView">
+	
         <button><a class="btn btn-sm" href="createDish.php">Create a Dish</a></button>
         <table class="display" id="ceremoniesTable" style="width:100%">
+	
             <div class="table responsive">
                 <thead>
                 <tr>
@@ -123,6 +139,23 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                 </tr>
                 </thead>
                 <tbody>
+				
+					<!-- Add show/hide column -->	
+	<div style="padding:5px; padding-left:0px">
+		<b>Show/Hide Columns:  </b>
+		<a class="showHideColumn" data-columnindex="0">ID</a> -
+		<a class="showHideColumn" data-columnindex="1">Names</a> -
+		<a class="showHideColumn" data-columnindex="2">Type</a> -
+		<a class="showHideColumn" data-columnindex="3">State</a> -
+		<a class="showHideColumn" data-columnindex="4">Country</a> -
+		<a class="showHideColumn" data-columnindex="5">Description</a> -
+		<a class="showHideColumn" data-columnindex="6">Recipe links</a> -
+		<a class="showHideColumn" data-columnindex="7">Video links</a> -
+		<a class="showHideColumn" data-columnindex="8">Status</a> -
+		<a class="showHideColumn" data-columnindex="9">Notes</a> -
+		<a class="showHideColumn" data-columnindex="10">Image</a>
+	</div>
+	<!-- Add show/hide column -->	
 
                 <?php
                 while($row = $data->fetch_assoc()) {
@@ -230,6 +263,8 @@ $GLOBALS['data'] = mysqli_query($db, $query);
         } );
         
     } );
+	//add visible coloumn
+
 
 </script>
 </body>

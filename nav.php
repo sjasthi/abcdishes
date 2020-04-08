@@ -57,6 +57,12 @@
                 <br/>Preferences</li>
             </a>
 
+            <a href="compileTheBook.php">
+              <li <?php if($nav_selected == "COMPILE"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/compile.png">
+                <br/>Compile</li>
+            </a>
+
 
             <a href="about.php">
              <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
