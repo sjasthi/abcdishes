@@ -13,16 +13,28 @@
             },
             success:function(php_result){
 				console.log(php_result);
-				<!-- Add show/hide column -->
-				$('.showHideColumn').on('click', function () {
-				var tableColumn = ceremoniesTable.column($(this).attr('data-columnindex'));
-					tableColumn.visible(!tableColumn.visible());
-				});
-			<!-- Add show/hide column -->
+				
             }
             
         })
     }
+
+    $(document).ready(function() {
+        $.fn.dataTable.ext.errMode = 'none';
+
+  var table = $('#ceremoniesTable').DataTable({
+  });
+
+  $('a.showHideColumn').on('click', function(e) {
+    e.preventDefault();
+
+    // Get the column API object
+    var column = table.column($(this).attr('data-columnindex'));
+
+    // Toggle the visibility
+    column.visible(!column.visible());
+  });
+});
 </script> 
 
 <!-- Add show/hide column -->
@@ -156,7 +168,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
 		<a class="showHideColumn" data-columnindex="10">Image</a>
 	</div>
 	<!-- Add show/hide column -->	
-
+    
                 <?php
                 while($row = $data->fetch_assoc()) {
                     $ID = $row["ID"];
@@ -170,9 +182,10 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     $Status = $row["Status"];
                     $Notes = $row["Notes"];
                     $Image = $row["Image"];
-                ?>
-
-                <tr>
+                
+                    if(isset($_SESSION['role'])) { //logged in, allow in cell editing
+                        ?>
+                        <tr>
                     <td><?php echo $ID; ?></td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Name','<?php echo $ID; ?>')"><?php echo $Name; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Type','<?php echo $ID; ?>')"><?php echo $Type; ?></div></span> </td>
@@ -188,7 +201,27 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     <?php echo '<td><a class="btn btn-danger btn-sm" href="deleteDish.php?id='.$row["ID"].'">Delete</a></td>' ?>
                 </tr>
 
-                <?php     
+                        <?php
+                    }else{//not logged in, not allowed to do in cell editing
+                        ?>
+                        <tr>
+                    <td><?php echo $ID; ?></td>
+                    <td><div><?php echo $Name; ?></div></span> </td>
+                    <td><div><?php echo $Type; ?></div></span> </td>
+                    <td><div><?php echo $State; ?></div></span> </td>
+                    <td><div><?php echo $Country; ?></div></span> </td>
+                    <td><div><?php echo $Description; ?></div></span> </td>
+                    <td><div><?php echo $Recipe_links; ?></div></span> </td>
+                    <td><div><?php echo $Video_links; ?></div></span> </td>
+                    <td><div><?php echo $Status; ?></div></span> </td>
+                    <td><div><?php echo $Name; ?></div></span> </td>
+                    <?php echo '<td><img src="images/'.$row["Image"].'" style="width:100px;height:120px;">' ?>
+                    <?php echo '<td><a class="btn btn-warning btn-sm" href="modifyDish.php?id='.$row["ID"].'">Modify</a></td>' ?>
+                    <?php echo '<td><a class="btn btn-danger btn-sm" href="deleteDish.php?id='.$row["ID"].'">Delete</a></td>' ?>
+                </tr>
+
+                        <?php
+                    }
                 }//end while
                 ?>
 
@@ -238,8 +271,10 @@ $GLOBALS['data'] = mysqli_query($db, $query);
             dom: 'lfrtBip',
             buttons: [
                 'copy', 'excel', 'csv', 'pdf'
+                
             ] }
         );
+        
 
         $('#ceremoniesTable thead tr').clone(true).appendTo( '#ceremoniesTable thead' );
         $('#ceremoniesTable thead tr:eq(1) th').each( function (i) {
@@ -262,7 +297,10 @@ $GLOBALS['data'] = mysqli_query($db, $query);
             retrieve: true
         } );
         
+        
     } );
+
+    
 	//add visible coloumn
 
 

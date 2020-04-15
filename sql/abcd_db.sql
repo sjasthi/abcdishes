@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2020 at 03:47 AM
+-- Generation Time: Apr 15, 2020 at 02:14 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -47,10 +47,9 @@ CREATE TABLE `dishes` (
 --
 
 INSERT INTO `dishes` (`ID`, `Name`, `Type`, `State`, `Country`, `Description`, `Recipe_links`, `Video_links`, `Status`, `Notes`, `Image`) VALUES
-(1, 'CHICKEN MAKHANI (BUTTER CHICKEN)', 'test', 'indian', 'indian', 'Butter chicken is mouth-watering, tender chicken, cooked in a spiced tomato sauce.', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Always make the gravy by first cooking fresh tomato, garlic, and cardamom down into a bright red pul', 'dish1.jfif'),
+(1, 'CHICKEN MAKHANI (BUTTER CHICKEN)', 'test2 ', 'indian', 'indian', 'Butter chicken is mouth-watering, tender chicken, cooked in a spiced tomato sauce.', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Always make the gravy by first cooking fresh tomato, garlic, and cardamom down into a bright red pul', 'dish1.jfif'),
 (2, 'AMOSAS (DEEP-FRIED POTATO/VEGGIE DUMPLING)', 'test', 'Michigan', 'United States', 'Spiced potatoes, onions, peas, and lentils fill traditional samosas. But sometimes, they are made wi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'none', 'approved', 'Good news for all of you Michigan food lovers and solely plant-based eaters. Indian samosas are usua', 'dish2.jfif'),
-(3, 'ALOO GOBI (POTATO AND CAULIFLOWER)', 'test', 'Bangalore', 'India', 'Aloo Gobi is a dry, vegan Indian dish, made with potatoes (aloo), cauliflower (gobi), and Indian spi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'None', 'In review ', 'Aloo Gobi occasionally contains kalonji and curry leaves as well. Other common ingredients include g', 'dish3.jfif'),
-(15, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '');
+(3, 'ALOO GOBI (POTATO AND CAULIFLOWER)', 'test', 'Bangalore', 'India', 'Aloo Gobi is a dry, vegan Indian dish, made with potatoes (aloo), cauliflower (gobi), and Indian spi', 'https://www.blueosa.com/the-top-10-indian-dishes/', 'None', 'In review ', 'Aloo Gobi occasionally contains kalonji and curry leaves as well. Other common ingredients include g', 'dish3.jfif');
 
 -- --------------------------------------------------------
 
@@ -85,7 +84,6 @@ CREATE TABLE `users` (
   `last_name` varchar(30) NOT NULL,
   `email` varchar(75) NOT NULL,
   `hash` varchar(200) NOT NULL,
-  `active` varchar(10) NOT NULL,
   `role` varchar(20) NOT NULL,
   `modified_time` date NOT NULL,
   `created_time` date NOT NULL
@@ -95,12 +93,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `hash`, `active`, `role`, `modified_time`, `created_time`) VALUES
-(1, 'Siva', 'Jasthi', 'siva@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'yes', 'admin', '0000-00-00', '0000-00-00'),
-(2, 'Mahesh', 'Sunkara', 'mahesh@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'yes', 'admin', '0000-00-00', '0000-00-00'),
-(3, 'SILC', 'Tester', 'test@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'yes', 'admin', '0000-00-00', '0000-00-00'),
-(4, 'SILC', 'CS320', 'cs320@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'yes', 'admin', '0000-00-00', '0000-00-00'),
-(5, 'ics', '499', 'ics499@metrostate.edu', '', '1', 'admin', '0000-00-00', '0000-00-00');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `hash`, `role`, `modified_time`, `created_time`) VALUES
+(1, 'new', 'new', 'new', '', 'new', '0000-00-00', '0000-00-00'),
+(3, 'SILC', 'Tester', 'test@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'admin', '0000-00-00', '0000-00-00'),
+(4, 'SILC', 'CS320', 'cs320@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'admin', '0000-00-00', '0000-00-00'),
+(5, '2', '2', '2', '', '2', '0000-00-00', '0000-00-00'),
+(8, 'Dylon', 'Lowinske', 'dylon.lowinske@gmail.com', '$2y$10$srP1fF3K.Pi/PWzGJBXuBOZikWVcYFKQ.eRo5WYWBimg2lvoXg5/a', 'admin', '0000-00-00', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -133,6 +131,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `dishes`
   MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

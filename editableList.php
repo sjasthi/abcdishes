@@ -1,6 +1,8 @@
 <?php
 include_once 'db_configuration.php';
 
+
+
     $value = $_POST['value'];
     $column = $_POST['column'];
     $id = $_POST['id'];

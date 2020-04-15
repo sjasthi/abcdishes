@@ -1,6 +1,7 @@
 <?php
 	
   // set the current page; 
+//adding Danny 
   $nav_selected = "ABOUT";
 
   // make the left menu buttons visible; options: YES, NO
