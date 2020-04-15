@@ -63,12 +63,38 @@
                 <br/>Compile</li>
             </a>
 
+            <a href="admin.php">
+              <li <?php if($nav_selected == "ADMIN"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/admin.png">
+                <br/>Admin</li>
+            </a>
+
 
             <a href="about.php">
              <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
               <img src="./images/about.png">
               <br/>About</li>
             </a>
+
+            <?php  //Check if they are logged out show correct login or logout function
+
+            if (isset($_SESSION['logged_in'])){
+
+            echo '<a href="logout.php">
+            <li>
+             <img src="./images/logout.png">
+            <br/>Logout</li>
+            </a>';
+                    
+              
+          }else{
+          echo' <a href="loginform.php">
+          <li>
+            <img src="./images/login.png">
+            <br/>Login</li>
+            </a> ';
+        }
+        ?>
 
       </ul>
       <br />
@@ -78,7 +104,7 @@
     <table style="width:1250px">
       <tr>
         <?php
-            if ($left_buttons == "YES") {
+            if ((isset($left_buttons)) and ($left_buttons == "YES")) {
         ?>
 
         <td style="width: 120px;" valign="top">
@@ -113,6 +139,22 @@
           } else {
         ?>
         <td style="width: 100%;" valign="top">
+        <?php
+          }
+        ?>
+
+        <?php
+            if ((isset($admin_left_buttons)) and ($admin_left_buttons == "YES")) {
+        ?>
+
+        <?php
+            
+          include("./admin_left_menu.php");
+        ?>
+        </td>
+        <?php
+          } else {
+        ?>
         <?php
           }
         ?>

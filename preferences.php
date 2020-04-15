@@ -55,12 +55,12 @@ $puzzles = $puzzle[0]['value'];
             <th>Update Value</th>
         </tr>
         <tr>
-            <td style="width:200px">Number of Topics Per Row:</td>
+            <td style="width:200px">Number of Dishes Per Row:</td>
             <td><input disabled type="int" maxlength="2" size="10" value="<?php echo $rows; ?>" title="Current value"></td> 
             <td><input required type="int" name="new_rows" maxlength="2" size="10" title="Enter a number"></td>
         </tr>
         <tr>
-            <td style="width:200px">Number of puzzles to show:</td>
+            <td style="width:200px">Number of Dishes to show:</td>
             <td><input disabled type="int" maxlength="2" size="10" value="<?php echo $puzzles; ?>" title="Current value"></td> 
             <td><input required type="int" name="new_puzzles" maxlength="2" size="10" title="Enter a number"></td>
         </tr>

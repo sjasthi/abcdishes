@@ -12,6 +12,8 @@
   
 
     $page="list.php";
+    verifyLogin($page);
+
 
 ?>
 <div class="container">

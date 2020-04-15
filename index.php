@@ -25,7 +25,7 @@ table.center {
 </head>
 
 <body>
-<h2 style = "color: #01B0F1;">Welcome to ABC </h3>
+<h2 style = "color: #01B0F1;">Welcome to ABCDishes </h3>
 </body>
 
 </html>
@@ -64,7 +64,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <body>
 
 
-<div class="navbar">
+<!-- <div class="navbar">
   <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
   <a href="#"><i class="fa fa-fw fa-search"></i> Receipes & Menus</a> 
   <a href="#"><i class="fa fa-fw fa-search"></i> Expert Advice</a>
@@ -72,7 +72,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <a href="#"><i class="fa fa-fw fa-foodtype"></i> Food Types</a>
   <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
   <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-</div>
+</div> -->
 
 </body>
 </html> 

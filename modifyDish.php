@@ -17,7 +17,7 @@
     require 'db_configuration.php';
    // include('header.php');
     $page="list.php";
-    //verifyLogin($page);
+    verifyLogin($page);
 
 ?>
 <div class="container">
