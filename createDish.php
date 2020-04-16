@@ -83,6 +83,11 @@
                 <td style="width:100px">Description:</td>
                 <td><input type="text"  name="Description" maxlength="50" size="50" required title="Please enter the name of the Description."></td>
             </tr>
+            <!-- Keywords -->
+			<tr>
+                <td style="width:100px">Keywords:</td>
+                <td><input type="text"  name="Keywords" maxlength="50" size="50" required title="Please enter the keywords."></td>
+            </tr>
 			<!-- Recipe_links -->
 			<tr>
                 <td style="width:100px">Recipe_links:</td>

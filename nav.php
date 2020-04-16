@@ -138,23 +138,53 @@
         <?php
           } else {
         ?>
-        <td style="width: 100%;" valign="top">
+        <!-- <td style="width: 100%;" valign="top"> -->
         <?php
           }
         ?>
 
-        <?php
+
+
+
+
+<?php
             if ((isset($admin_left_buttons)) and ($admin_left_buttons == "YES")) {
         ?>
 
+        <td style="width: 120px;" valign="top">
         <?php
-            
-          include("./admin_left_menu.php");
+            if ($nav_selected == "HOME") {
+                include("./index.php");
+            } elseif ($nav_selected == "LIST") {
+                include("./left_menu_list.php");
+            } elseif ($nav_selected == "TIMELINE") {
+                include("./left_menu_timeline.php");
+            } elseif ($nav_selected == "REPORTS") {
+                include("./left_menu_reports.php");
+            } elseif ($nav_selected == "Reports") {
+                include("./left_menu_Reports.php");
+            } elseif ($nav_selected == "HISTORY") {
+                include("./left_menu_history.php");
+            } elseif ($nav_selected == "TREND") {
+              include("./left_menu_trend.php");
+           } elseif ($nav_selected == "SETUP") {
+            include("./left_menu_setup.php");
+          } elseif ($nav_selected == "ABOUT") {
+          include("./left_menu_about.php");
+          }elseif ($nav_selected == "HELP") {
+                include("./left_menu_help.php");
+            } else {
+                include("./admin_left_menu.php");
+            }
         ?>
         </td>
+        <td style="width: 1100px;" valign="top">
         <?php
           } else {
         ?>
+        <!-- <td style="width: 100%;" valign="top"> -->
         <?php
           }
         ?>
+
+        

@@ -141,6 +141,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     <th>State</th>
                     <th>Country</th>
                     <th>Description</th>
+                    <th>Keywords</th>
                     <th>Recipe links</th>
                     <th>Video links</th>                
                     <th>Status</th>
@@ -161,11 +162,12 @@ $GLOBALS['data'] = mysqli_query($db, $query);
 		<a class="showHideColumn" data-columnindex="3">State</a> -
 		<a class="showHideColumn" data-columnindex="4">Country</a> -
 		<a class="showHideColumn" data-columnindex="5">Description</a> -
-		<a class="showHideColumn" data-columnindex="6">Recipe links</a> -
-		<a class="showHideColumn" data-columnindex="7">Video links</a> -
-		<a class="showHideColumn" data-columnindex="8">Status</a> -
-		<a class="showHideColumn" data-columnindex="9">Notes</a> -
-		<a class="showHideColumn" data-columnindex="10">Image</a>
+        <a class="showHideColumn" data-columnindex="6">Keywords</a> -
+		<a class="showHideColumn" data-columnindex="7">Recipe links</a> -
+		<a class="showHideColumn" data-columnindex="8">Video links</a> -
+		<a class="showHideColumn" data-columnindex="9">Status</a> -
+		<a class="showHideColumn" data-columnindex="10">Notes</a> -
+		<a class="showHideColumn" data-columnindex="11">Image</a>
 	</div>
 	<!-- Add show/hide column -->	
     
@@ -177,6 +179,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     $State = $row["State"];
                     $Country = $row["Country"];
                     $Description = $row["Description"];
+                    $Keywords = $row["Keywords"];
                     $Recipe_links = $row["Recipe_links"];
                     $Video_links = $row["Video_links"];
                     $Status = $row["Status"];
@@ -192,6 +195,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     <td><div contenteditable="true" onBlur="updateValue(this,'State','<?php echo $ID; ?>')"><?php echo $State; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Country','<?php echo $ID; ?>')"><?php echo $Country; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Description','<?php echo $ID; ?>')"><?php echo $Description; ?></div></span> </td>
+                    <td><div contenteditable="true" onBlur="updateValue(this,'Keywords','<?php echo $ID; ?>')"><?php echo $Keywords; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Recipe_links','<?php echo $ID; ?>')"><?php echo $Recipe_links; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Video_links','<?php echo $ID; ?>')"><?php echo $Video_links; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Status','<?php echo $ID; ?>')"><?php echo $Status; ?></div></span> </td>
@@ -211,6 +215,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     <td><div><?php echo $State; ?></div></span> </td>
                     <td><div><?php echo $Country; ?></div></span> </td>
                     <td><div><?php echo $Description; ?></div></span> </td>
+                    <td><div><?php echo $Keywords; ?></div></span> </td>
                     <td><div><?php echo $Recipe_links; ?></div></span> </td>
                     <td><div><?php echo $Video_links; ?></div></span> </td>
                     <td><div><?php echo $Status; ?></div></span> </td>

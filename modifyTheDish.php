@@ -10,6 +10,7 @@ if (isset($_POST['ID'])){
     $state = mysqli_real_escape_string($db, $_POST['State']);
     $country = mysqli_real_escape_string($db, $_POST['Country']);
     $description = mysqli_real_escape_string($db, $_POST['Description']);
+    $keywords = mysqli_real_escape_string($db, $_POST['Keywords']);
     $recipe_links = mysqli_real_escape_string($db, $_POST['Recipe_links']);
     $video_links = mysqli_real_escape_string($db, $_POST['Video_links']);
     $status = mysqli_real_escape_string($db, $_POST['Status']);
@@ -23,6 +24,7 @@ if (isset($_POST['ID'])){
         State = '$state',
         Country = '$country',
         Description = '$description',
+        Keywords = '$keywords',
         Recipe_links = '$recipe_links',
         Video_links = '$video_links',
         Status = '$status',

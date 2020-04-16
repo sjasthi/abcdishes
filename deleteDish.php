@@ -74,6 +74,11 @@ if ($result->num_rows > 0) {
     </div>
 
     <div class="form-group col-md-12">
+    <label for="description">Keywords</label>
+    <input type="text" class="form-control" name="Keywords" value="'.$row["Keywords"].'"  maxlength="255" readonly>
+  </div>
+
+    <div class="form-group col-md-12">
     <label for="description">Recipe Link</label>
     <input type="text" class="form-control" name="Recipe_links" value="'.$row["Recipe_links"].'"  maxlength="255" readonly>
   </div>
