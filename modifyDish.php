@@ -93,6 +93,11 @@ if ($result->num_rows > 0) {
       <label for="description">Description</label>
       <input type="text" class="form-control" name="Description" value="'.$row["Description"].'"  maxlength="255" style=width:400px required><br>
       </div>
+
+      <div>
+      <label for="description">Keywords</label>
+      <input type="text" class="form-control" name="Keywords" value="'.$row["Keywords"].'"  maxlength="255" style=width:400px required><br>
+      </div>
       
       <div>
         <label for="description">Recipe_links</label>

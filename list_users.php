@@ -4,34 +4,28 @@
   $nav_selected = "ADMIN";
 
   // make the left menu buttons visible; options: YES, NO
-  $left_buttons = "NO";
   $admin_left_buttons = "YES";
 
   // set the left menu button selected; options will change based on the main selection
   $admin_left_selected = "USERS";
+  
 
-  echo '<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">';
 require 'bin/functions.php';
 
 require 'db_configuration.php';
 
 $query = "SELECT * FROM users";
 //list
+
 $GLOBALS['data'] = mysqli_query($db, $query);
 
-  include("./nav.php");
-  
 ?>
+<?php include("./nav.php"); ?>
 
-<?php include("./footer.php"); ?>
-
-<?php $page_title = 'Users'; ?>
-<?php 
-    $page="list_user.php";
-    verifyLogin($page);
-?>
-
-<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+<td style = "width: 100%;" valign="top">
+<div id="menu-left">
+</div> 
+<div> 
 
 <style>
     #title {
@@ -52,6 +46,15 @@ $GLOBALS['data'] = mysqli_query($db, $query);
     }
 </style>
 
+
+
+<?php $page_title = 'Users'; ?>
+<?php 
+    $page="list_user.php";
+    verifyLogin($page);
+?>
+
+<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 <!-- Page Content -->
 <br><br>
 <div class="container-fluid">
@@ -78,7 +81,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
     ?>
    
    
-    <h2 id="title">Users</h2><br>    
+    <h2 id="title" >Users</h2><br>    
     <div id="customerTableView">
 	
         <button><a class="btn btn-sm" href="create_user.php">Create new user</a></button>
@@ -129,3 +132,6 @@ $GLOBALS['data'] = mysqli_query($db, $query);
         </table>
     </div>
 </div>
+
+<div> 
+</td>
