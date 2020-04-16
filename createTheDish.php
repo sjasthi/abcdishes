@@ -13,6 +13,7 @@
     $State = mysqli_real_escape_string($db,$_POST['State']);
     $Country = mysqli_real_escape_string($db,$_POST['Country']);
     $Description = mysqli_real_escape_string($db,$_POST['Description']);
+    $Keywords = mysqli_real_escape_string($db,$_POST['Keywords']);
     $Video_links = mysqli_real_escape_string($db,$_POST['Video_links']);
     $Recipe_links = mysqli_real_escape_string($db,$_POST['Recipe_links']);
 	$Status = mysqli_real_escape_string($db,$_POST['Status']);
@@ -24,10 +25,10 @@
     $validate = true;    
     
 
-    $sql = "INSERT INTO dishes(Name, Type, State, Country, Description, Recipe_links, 
+    $sql = "INSERT INTO dishes(Name, Type, State, Country, Description, Keywords, Recipe_links, 
         Video_links, Status, Notes, Image)
 
-    VALUES ('$Names','$Type','$State','$Country','$Description','$Recipe_links',
+    VALUES ('$Names','$Type','$State','$Country','$Description', '$Keywords', '$Recipe_links',
         '$Video_links','$Status','$Notes', '$Image')
     ";
 
