@@ -189,8 +189,10 @@ $GLOBALS['data'] = mysqli_query($db, $query);
                     if(isset($_SESSION['role'])) { //logged in, allow in cell editing
                         ?>
                         <tr>
-                    <td><?php echo $ID; ?></td>
-                    <td><div contenteditable="true" onBlur="updateValue(this,'Name','<?php echo $ID; ?>')"><?php echo $Name; ?></div></span> </td>
+                    <td><?php echo $ID; ?></td>   
+                    <td> <div contenteditable="true" onBlur="updateValue(this,'Name','<?php echo $ID; ?>')"><?php echo $Name; ?></div></span> </td>
+
+
                     <td><div contenteditable="true" onBlur="updateValue(this,'Type','<?php echo $ID; ?>')"><?php echo $Type; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'State','<?php echo $ID; ?>')"><?php echo $State; ?></div></span> </td>
                     <td><div contenteditable="true" onBlur="updateValue(this,'Country','<?php echo $ID; ?>')"><?php echo $Country; ?></div></span> </td>
