@@ -176,7 +176,7 @@ if(isset($_POST["search"])) {  //when search is clicked this code runs
               <td><div><?php echo $Video_links; ?></div></span> </td>
               <td><div><?php echo $Status; ?></div></span> </td>
               <td><div><?php echo $Name; ?></div></span> </td>
-              <?php echo '<td><img src="images/'.$row["Image"].'">' ?>
+              <?php echo '<td><img src="images/'.$row["Image"].'" style="width:100px;height:120px;">' ?>
               <p style="page-break-before: always">
           </tr>
               

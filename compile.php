@@ -47,9 +47,8 @@ if(isset($_POST["compile"])) {  //when search is clicked this code runs
             echo '<form action="modifyTheDish.php" method="POST" enctype="multipart/form-data">
             <br>
             <h3>'.$row["Name"].' </h3> <br>
-            
             <div>
-             <img src="images/'.$row["Image"].'" style="width:200px;height:200px;">
+             <img src="images/'.$row["Image"].'" style="width:100px;height:120px;">
              <br>
           </div>
       

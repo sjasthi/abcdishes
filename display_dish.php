@@ -13,7 +13,7 @@
   $left_selected = "";
 
   include("./nav.php");
-  include("./index_home.php");
+  // include("./index_home.php");
     require 'bin/functions.php';
     require 'db_configuration.php';
    // include('header.php');
@@ -90,6 +90,11 @@ if (isset($_GET['id'])){
    
     <div>
     <label for="description">Description: </label> '.$row["Description"].'
+    
+    </div>
+
+    <div>
+    <label for="description">Keywords: </label> '.$row["Keywords"].'
     
     </div>
     
