@@ -39,6 +39,7 @@ $sql4 = "SELECT `value` FROM `preferences` WHERE `name`= 'IMAGE_HEIGHT_IN_GRID'"
 $sql5 = "SELECT `value` FROM `preferences` WHERE `name`= 'IMAGE_WIDTH_IN_GRID'";
 $sql6 = "SELECT `value` FROM `preferences` WHERE `name`= 'IMAGE_HEIGHT_IN_CAROUSAL'";
 $sql7 = "SELECT `value` FROM `preferences` WHERE `name`= 'IMAGE_WIDTH_IN_CAROUSAL'";
+$sql10 = "SELECT `value` FROM `preferences` WHERE `name`= 'DESCRIPTION_LENGTH'";
 
 
 
@@ -49,6 +50,8 @@ $results4 = mysqli_query($db,$sql4);
 $results5 = mysqli_query($db,$sql3);
 $results6 = mysqli_query($db,$sql6);
 $results7 = mysqli_query($db,$sql7);
+$results10 = mysqli_query($db,$sql10);
+
 
 
 if(mysqli_num_rows($results1)>0){
@@ -64,6 +67,13 @@ if(mysqli_num_rows($results2)>0){
     }
 }
 $dish = $dishes[0]['value'];
+
+if(mysqli_num_rows($results10)>0){
+    while($row = mysqli_fetch_assoc($results10)){
+        $lengths[] = $row;
+    }
+}
+$length = $lengths[0]['value'];
 
 /* if(mysqli_num_rows($results3)>0){
     while($row = mysqli_fetch_assoc($results3)){

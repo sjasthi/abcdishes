@@ -27,12 +27,17 @@
         <tr>
             <td style="width:200px">Number of Dishes Per Row:</td>
             <td><input disabled type="int" maxlength="2" size="10" value="<?php echo $rows; ?>" title="Current value"></td> 
-            <td><input required type="int" name="new_rows" maxlength="2" size="10" title="Enter a number"></td>
+            <td><input required type="int" name="new_rows" maxlength="4" size="10" title="Enter a number"></td>
         </tr>
         <tr>
             <td style="width200px">Number of Dishes to show:</td>
             <td><input disabled type="int" maxlength="2" size="10" value="<?php echo $dish; ?>" title="Current value"></td> 
-            <td><input required type="int" name="new_dishes" maxlength="2" size="10" title="Enter a number"></td>
+            <td><input required type="int" name="new_dishes" maxlength="4" size="10" title="Enter a number"></td>
+        </tr>
+        <tr>
+            <td style="width200px">Number of Characters to show:</td>
+            <td><input disabled type="int" maxlength="2" size="10" value="<?php echo $length; ?>" title="Current value"></td> 
+            <td><input required type="int" name="new_length" maxlength="4" size="10" title="Enter a number"></td>
         </tr>
 
         <!-- <tr>

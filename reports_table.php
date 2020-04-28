@@ -1,104 +1,103 @@
 
 <?php
-  $nav_selected = "SCANNER";
+  $nav_selected = "REPORTS";
   $left_buttons = "YES";
   $left_selected = "Tables";
-
   include("./nav.php");
+?>
 
+<?php
  $con = mysqli_connect("localhost", "root", "", "abcd_db");  
-
-
- $queryProposed = "SELECT Status, count(*) as number FROM dishes WHERE Status = 'Proposed'";  
- $queryInReview = "SELECT Status, count(*) as number FROM dishes WHERE Status = 'In Review'";  
- $queryApproved = "SELECT Status, count(*) as number FROM dishes WHERE Status = 'Approved'";  
- $queryRejected = "SELECT Status, count(*) as number FROM dishes WHERE Status = 'Rejected'";  
-
-
-
-
-  ?>
-<header>Status</header>
+?>
+<!DOCTYPE HTML>
+<html>
 <link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+<head>
+ <meta charset="utf-8">
+ <title>
+ Create Google Charts
+ </title>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+ google.load("visualization", "1", {packages:["table"]});
+ google.setOnLoadCallback(drawChart);
+ function drawChart() {
+ var data = google.visualization.arrayToDataTable([
 
-  
-    
-<table border="1">
-  <tr>
-    <th>Proposed </th>
-    <th>In Review </th>
-    <th>Approved </th>
-    <th>Rejected </th>
+ ['Status', 'Count'],
+ <?php 
 
-  </tr>
-  <tr>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryProposed));
-    echo $row["number"];  
-    ?>
-    </td>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryInReview));
-    echo $row["number"];  
-    ?>
-    </td>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryApproved));
-    echo $row["number"];  
-    ?>
-    </td>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryRejected));
-    echo $row["number"];  
-    ?>
-    </td>
-  </tr>
-</table>
+ $query = "SELECT Status, count(*) as number FROM dishes GROUP BY Status";  
 
-<header>Keywords</header>
-<link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
+ $exec = mysqli_query($con,$query);
+ while($row = mysqli_fetch_array($exec)){
 
-  
-    
-<table border="1">
-  <tr>
-    <th>keyword_1 </th>
-    <th>keyword_2 </th>
-    <th>keyword_3 </th>
-    <th>keyword_4 </th>
+ //echo "['".$row['vdate']."',".$row['count']."],";
+ echo "['".$row["Status"]."', ".$row["number"]."],";  
+ }
+ ?>
+ 
+ ]);
 
-  </tr>
-  <tr>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryProposed));
-    echo $row["number"];  
-    ?>
-    </td>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryInReview));
-    echo $row["number"];  
-    ?>
-    </td>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryApproved));
-    echo $row["number"];  
-    ?>
-    </td>
-    <td>
-    <?php
-    $row = mysqli_fetch_array(mysqli_query($con,$queryRejected));
-    echo $row["number"];  
-    ?>
-    </td>
-  </tr>
-</table>
+ var options = {
+ title: 'Status'
+ };
+ var chart = new google.visualization.Table(document.getElementById("columnchart"));
+ chart.draw(data, options);
+ }
+ </script>
+</head>
+<body>
+ <h3>Status Table</h3>
+ <div id="columnchart" style="width: 700px; height: 200px;"></div>
+</body>
+</html>
+
+<?php
+ $con = mysqli_connect("localhost", "root", "", "abcd_db");  
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>
+ Create Google Charts
+ </title>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+ google.load("visualization", "1", {packages:["table"]});
+ google.setOnLoadCallback(drawChart);
+ function drawChart() {
+ var data = google.visualization.arrayToDataTable([
+
+ ['Keyword', 'Count'],
+ <?php 
+
+ $query = "SELECT Keywords, count(*) as number FROM dishes GROUP BY Keywords";  
+
+ $exec = mysqli_query($con,$query);
+ while($row = mysqli_fetch_array($exec)){
+
+ //echo "['".$row['vdate']."',".$row['count']."],";
+ echo "['".$row["Keywords"]."', ".$row["number"]."],";  
+ }
+ ?>
+ 
+ ]);
+
+ var options = {
+ title: 'Status'
+ };
+ var chart = new google.visualization.Table(document.getElementById("columnchart2"));
+ chart.draw(data, options);
+ }
+ </script>
+</head>
+<body>
+ <h3>Keywords Table</h3>
+ <div id="columnchart2" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
 
 
 <?php include("./footer.php"); ?>

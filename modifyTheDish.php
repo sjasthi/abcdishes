@@ -15,8 +15,11 @@ if (isset($_POST['ID'])){
     $video_links = mysqli_real_escape_string($db, $_POST['Video_links']);
     $status = mysqli_real_escape_string($db, $_POST['Status']);
     $notes = mysqli_real_escape_string($db, $_POST['Notes']);
-    $image = basename($_FILES["Image"]["name"]);
-    
+    if($_FILES["Image"]["name"]) {
+        $image = basename($_FILES["Image"]["name"]);
+    }else{
+        $image = mysqli_real_escape_string($db, $_POST['Image']);
+    }
 
     $sql = "UPDATE dishes
     SET Name = '$name',

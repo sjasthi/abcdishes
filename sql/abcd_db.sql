@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2020 at 02:04 AM
+-- Generation Time: Apr 28, 2020 at 09:19 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -34,7 +34,7 @@ CREATE TABLE `dishes` (
   `Type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `State` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Country` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Description` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Description` varchar(10000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Keywords` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Recipe_links` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Video_links` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -48,8 +48,7 @@ CREATE TABLE `dishes` (
 --
 
 INSERT INTO `dishes` (`ID`, `Name`, `Type`, `State`, `Country`, `Description`, `Keywords`, `Recipe_links`, `Video_links`, `Status`, `Notes`, `Image`) VALUES
-(1, 'Name_1', 'Type_1', 'State_1', 'Country_1', 'Description_1', 'keyword1, keyword 2', 'Recipe_links_1', 'Video_links_1', 'Proposed', 'Notes_1', 'food1.jpg'),
-(2, 'Name_2', 'Type_2', 'State_1', 'Country_2', 'Description_2', 'keyword_1', 'Recipe_links_2', 'Video_links_2', 'Proposed', 'Notes_2', 'food2.jpg'),
+(2, 'Name_2', 'Type_2', 'State_1', 'Country_2', 'Description_2', 'keyword_1', 'Recipe_links_2', 'Video_links_2', 'Proposed', 'Notes_2', 'food4.jpg'),
 (3, 'Name_3', 'Type_3', 'State_1', 'Country_3', 'Description_3', 'keyword_3', 'Recipe_links_3', 'Video_links_3', 'Proposed', 'Notes_3', 'food3.jpg'),
 (4, 'Name_4', 'Type_4', 'State_1', 'Country_4', 'Description_4', 'keyword_3', 'Recipe_links_4', 'Video_links_4', 'Proposed', 'Notes_4', 'food4.jpg'),
 (5, 'Name_5', 'Type_5', 'State_1', 'Country_5', 'Description_5', 'keyword_3', 'Recipe_links_5', 'Video_links_5', 'Proposed', 'Notes_5', 'food5.jpg'),
@@ -344,9 +343,9 @@ INSERT INTO `dishes` (`ID`, `Name`, `Type`, `State`, `Country`, `Description`, `
 (294, 'Name_294', 'Type_20', 'State_8', 'Country_294', 'Description_294', 'keyword_1, keyword_3', 'Recipe_links_294', 'Video_links_294', 'Rejected', 'Notes_294', 'food6.jpg'),
 (295, 'Name_295', 'Type_21', 'State_8', 'Country_295', 'Description_295', 'keyword_1, keyword_3', 'Recipe_links_295', 'Video_links_295', 'Rejected', 'Notes_295', 'food1.jpg'),
 (296, 'Name_296', 'Type_22', 'State_8', 'Country_296', 'Description_296', 'keyword_1, keyword_3', 'Recipe_links_296', 'Video_links_296', 'Rejected', 'Notes_296', 'food2.jpg'),
-(297, 'Name_297', 'Type_1', 'State_8', 'Country_297', 'Description_297', 'keyword_1, keyword_3', 'Recipe_links_297', 'Video_links_297', 'Rejected', 'Notes_297', 'food3.jpg');
+(297, 'Name_297', 'Type_1', 'State_8', 'Country_297', 'Description_297', 'keyword_1, keyword_3', 'Recipe_links_297', 'Video_links_297', 'Rejected', 'Notes_297', 'food3.jpg'),
+(298, 'Name_298', 'Type_2', 'State_8', 'Country_298', 'Description_298', 'keyword_1, keyword_3', 'Recipe_links_298', 'Video_links_298', 'Rejected', 'Notes_298', 'food4.jpg');
 INSERT INTO `dishes` (`ID`, `Name`, `Type`, `State`, `Country`, `Description`, `Keywords`, `Recipe_links`, `Video_links`, `Status`, `Notes`, `Image`) VALUES
-(298, 'Name_298', 'Type_2', 'State_8', 'Country_298', 'Description_298', 'keyword_1, keyword_3', 'Recipe_links_298', 'Video_links_298', 'Rejected', 'Notes_298', 'food4.jpg'),
 (299, 'Name_299', 'Type_3', 'State_8', 'Country_299', 'Description_299', 'keyword_1, keyword_3', 'Recipe_links_299', 'Video_links_299', 'Rejected', 'Notes_299', 'food5.jpg'),
 (300, 'Name_300', 'Type_4', 'State_8', 'Country_300', 'Description_300', 'keyword_1, keyword_3', 'Recipe_links_300', 'Video_links_300', 'Rejected', 'Notes_300', 'food6.jpg');
 
@@ -369,13 +368,14 @@ CREATE TABLE `preferences` (
 
 INSERT INTO `preferences` (`id`, `name`, `value`, `comments`) VALUES
 (1, 'NO_OF_DISHES_PER_ROW', 4, 'This is the number of topics, per row, on home page'),
-(2, 'NO_OF_DISHES_TO_SHOW', 20, 'The number of Question per quiz'),
+(2, 'NO_OF_DISHES_TO_SHOW', 100, 'The number of Question per quiz'),
 (3, 'IMAGE_HEIGHT_IN_GRID', 400, 'the height'),
 (4, 'IMAGE_WIDTH_IN_GRID', 400, 'the width'),
 (5, 'IMAGE_HEIGTH_IN_CAROUSAL', 400, 'carousal heigth'),
 (6, 'IMAGE_WIDTH_IN_CAROUSAL', 400, 'with of carousal'),
 (7, 'NAME_OF_FAVORITE_DISH', 0, 'chicken soup'),
-(8, 'DEFAULT_VIEW_FOR_HOME_PAGE', 0, 'Grid');
+(8, 'DEFAULT_VIEW_FOR_HOME_PAGE', 0, 'Grid'),
+(10, 'DESCRIPTION_LENGTH', 200, '');
 
 -- --------------------------------------------------------
 
@@ -399,7 +399,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `hash`, `role`, `modified_time`, `created_time`) VALUES
-(1, 'new', 'new', 'new', '', 'new', '0000-00-00', '0000-00-00'),
 (3, 'SILC', 'Tester', 'test@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'admin', '0000-00-00', '0000-00-00'),
 (4, 'SILC', 'CS320', 'cs320@silcmn.com', '$2y$10$zFAG5GBNtf.5BpowMqZSputSLeG8OzfKACpjAMsePjZhu.TnvU/Bu', 'admin', '0000-00-00', '0000-00-00'),
 (8, 'Dylon', 'Lowinske', 'dylon.lowinske@gmail.com', '$2y$10$srP1fF3K.Pi/PWzGJBXuBOZikWVcYFKQ.eRo5WYWBimg2lvoXg5/a', 'admin', '0000-00-00', '0000-00-00'),
@@ -435,13 +434,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `dishes`
 --
 ALTER TABLE `dishes`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=302;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
