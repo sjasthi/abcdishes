@@ -12,5 +12,22 @@
 
   include("./nav.php");
 
+  
 ?>
+
+<?php
+        if(isset($_GET['backupComplete'])){
+            if($_GET["backupComplete"] == "Success"){
+                echo '<br><h3>Success! Your dish has been added!</h3>';
+            }
+        }
+
+        if(isset($_GET['dishUpdated'])){
+            if($_GET["dishUpdated"] == "Success"){
+                echo '<br><h3>Success! Your dish has been modified!</h3>';
+            }
+        }
+
+        
+    ?>
 <link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">

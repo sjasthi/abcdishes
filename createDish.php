@@ -4,7 +4,7 @@
 <?php 
 
  // set the current page to one of the main buttons
-  $nav_selected = "HOME";
+  $nav_selected = "LIST";
 
   // make the left menu buttons visible; options: YES, NO
   $left_buttons = "NO";
@@ -76,12 +76,14 @@
             <!-- Country -->
 			<tr>
                 <td style="width:100px">Country:</td>
-                <td><input type="text"  name="Country" maxlength="50" size="50" required title="Please enter the name of the Country."></td>
+                <td><input type="text"  name="Country" maxlength="50" size="50" required title="Please enter the name of the Country."></td> 
             </tr>
+            
 			<!-- Description -->
 			<tr>
                 <td style="width:100px">Description:</td>
-                <td><input type="text"  name="Description" maxlength="50" size="50" required title="Please enter the name of the Description."></td>
+                <td><textarea name="Description" maxlength="5000" size="50" style=width:394px  required title="Please enter the name of the Description."> </textarea> <td>
+                
             </tr>
             <!-- Keywords -->
 			<tr>

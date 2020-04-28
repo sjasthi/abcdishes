@@ -1,5 +1,5 @@
 <?php
-  $nav_selected = "SCANNER";
+  $nav_selected = "REPORTS";
   $left_buttons = "YES";
   $left_selected = "Bar Charts";
 
@@ -47,7 +47,7 @@
  </script>
 </head>
 <body>
- <h3>Bar Chart</h3>
+ <h3>Status Chart</h3>
  <div id="columnchart" style="width: 900px; height: 500px;"></div>
 </body>
 </html>

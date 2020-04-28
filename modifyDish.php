@@ -4,7 +4,7 @@
 <?php
 
  // set the current page to one of the main buttons
-  $nav_selected = "HOME";
+  $nav_selected = "LIST";
 
   // make the left menu buttons visible; options: YES, NO
   $left_buttons = "NO";
@@ -60,70 +60,76 @@ if ($result->num_rows > 0) {
       }
 
       echo '<h2 id="title">Modify Dish</h2><br>';
-      echo '<form action="modifyTheDish.php" method="POST" enctype="multipart/form-data">
+      ?>
+
+      <form action="modifyTheDish.php" method="POST" enctype="multipart/form-data">
       <br>
-      <h3>'.$row["ID"].' - '.$row["Name"].'? </h3> <br>
+      <h3><?php echo $row["Name"]; ?></h3> <br>
 
       <div>
         <label for="id">Id</label>
-        <input type="text" class="form-control" name="ID" value="'.$row["ID"].'"  maxlength="5" style=width:400px readonly><br>
+        <input type="text" class="form-control" name="ID" value=<?php echo $row["ID"]; ?>  maxlength="5" style=width:400px readonly><br>
       </div>
 
       <div>
         <label for="category">Name</label>
-        <input type="text" class="form-control" name="Name" value="'.$row["Name"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Name" value=<?php echo $row["Name"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div>
         <label for="level">Type</label>
-        <input type="text" class="form-control" name="Type" value="'.$row["Type"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Type" value=<?php echo $row["Type"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div>
         <label for="facilitator">State</label>
-        <input type="text" class="form-control" name="State" value="'.$row["State"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="State" value=<?php echo $row["State"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div>
         <label for="description">Country</label>
-        <input type="text" class="form-control" name="Country" value="'.$row["Country"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Country" value=<?php echo $row["Country"]; ?>  maxlength="255" style=width:400px required><br>
+        
       </div>
      
       <div>
       <label for="description">Description</label>
-      <input type="text" class="form-control" name="Description" value="'.$row["Description"].'"  maxlength="255" style=width:400px required><br>
+      
+      <textarea class="form-control" name="Description" maxlength="10000" style=width:400px required><?php echo $row["Description"]; ?></textarea><br>
+   
+
       </div>
 
       <div>
       <label for="description">Keywords</label>
-      <input type="text" class="form-control" name="Keywords" value="'.$row["Keywords"].'"  maxlength="255" style=width:400px required><br>
+      <input type="text" class="form-control" name="Keywords" value=<?php echo $row["Keywords"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
       
       <div>
         <label for="description">Recipe_links</label>
-        <input type="text" class="form-control" name="Recipe_links" value="'.$row["Recipe_links"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Recipe_links" value=<?php echo $row["Recipe_links"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div>
         <label for="description">Video_links</label>
-        <input type="text" class="form-control" name="Video_links" value="'.$row["Video_links"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Video_links" value=<?php echo $row["Video_links"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div>
         <label for="description">Status</label>
-        <input type="text" class="form-control" name="Status" value="'.$row["Status"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Status" value=<?php echo $row["Status"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div>
         <label for="description">Notes</label>
-        <input type="text" class="form-control" name="Notes" value="'.$row["Notes"].'"  maxlength="255" style=width:400px required><br>
+        <input type="text" class="form-control" name="Notes" value=<?php echo $row["Notes"]; ?>  maxlength="255" style=width:400px required><br>
       </div>
 
       <div class="form-group col-md-4">
       <label for="cadence">New Image</label>
       <input type="file" name="Image" id="Image" maxlength="255">
       </div>
-      <input type="hidden" class="form-control" name="Image" value="'.$row["Image"].'" maxlength="255" required>
+      <input type="hidden" class="form-control" name="Image" value=<?php echo $row["Image"]; ?> maxlength="255" required>
 
   
 
@@ -135,8 +141,8 @@ if ($result->num_rows > 0) {
       </div>
       <br> <br>
 
-      </form>';
-
+      </form>
+      <?php
     }//end while
 }//end if
 else {
