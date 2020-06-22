@@ -369,7 +369,7 @@ CREATE TABLE `preferences` (
 
 INSERT INTO `preferences` (`id`, `name`, `value`, `comments`) VALUES
 (1, 'NO_OF_DISHES_PER_ROW', 4, 'This is the number of topics, per row, on home page'),
-(2, 'NO_OF_DISHES_TO_SHOW', 20, 'The number of Question per quiz'),
+(2, 'NO_OF_DISHES_TO_SHOW', 20, 'The number of dishes to show'),
 (3, 'IMAGE_HEIGHT_IN_GRID', 400, 'the height'),
 (4, 'IMAGE_WIDTH_IN_GRID', 400, 'the width'),
 (5, 'IMAGE_HEIGTH_IN_CAROUSAL', 400, 'carousal heigth'),

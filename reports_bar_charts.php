@@ -6,7 +6,7 @@
   include("./nav.php");
   ?>
 <?php
- $con = mysqli_connect("localhost", "root", "", "abcd_db");  
+ $con = mysqli_connect("localhost", "root", "", "abcdishes_db");  
 ?>
 <!DOCTYPE HTML>
 <html>

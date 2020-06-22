@@ -7,7 +7,7 @@
   ?>
 
  <?php  
- $connect = mysqli_connect("localhost", "root", "", "abcd_db");  
+ $connect = mysqli_connect("localhost", "root", "", "abcdishes_db");  
  $query = "SELECT Status, count(*) as number FROM dishes GROUP BY Status";  
  $result = mysqli_query($connect, $query);  
  ?>  

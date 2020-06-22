@@ -6,7 +6,7 @@
 
   include("./nav.php");
 
- $con = mysqli_connect("localhost", "root", "", "abcd_db");  
+ $con = mysqli_connect("localhost", "root", "", "abcdishes_db");  
 
 
  $queryProposed = "SELECT Status, count(*) as number FROM dishes WHERE Status = 'Proposed'";  
