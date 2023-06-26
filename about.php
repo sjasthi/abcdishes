@@ -39,11 +39,9 @@
 
 <body class="body_background">
 
-
-
 <h3 style = "color: #01B0F1;">About</h3>
 
-	<h3>Team Members</h3>
+	<h3>Team Members on the project</h3>
 	<p>
 		<ul>
       <li>Siva Jasthi </li>

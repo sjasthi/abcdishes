@@ -21,7 +21,6 @@
 ?>
 <?php 
     $mysqli = NEW MySQLi('localhost','root','','abcd_db');
-    //$resultset = $mysqli->query("SELECT DISTINCT topic FROM topics ORDER BY topic ASC");   
 ?>
 <link rel="stylesheet" href="css/mainStyleSheet.css" type="text/css">
 
